@@ -1,6 +1,7 @@
 package com.crud.services.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,15 +29,19 @@ public class StudentServiceImpl implements StudentService{
 	}
 
 	@Override
-	public Student updateStudent(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Student updateStudent(int id,Student UpdatedStudentData) {
+		Student oldStudentData = this.studentRepository.findById(id).orElseThrow();
+		oldStudentData.setName(UpdatedStudentData.getName());
+		oldStudentData.setEmail(UpdatedStudentData.getEmail());
+		
+		Student updatedStudent = this.studentRepository.save(oldStudentData);
+		return updatedStudent;
 	}
 
 	@Override
-	public void deleteStudent(int id) {
-		// TODO Auto-generated method stub
-		
+	public String deleteStudent(int id) {
+		this.studentRepository.deleteById(id);
+		return "Successfully Deleted";
 	}
 
 }
