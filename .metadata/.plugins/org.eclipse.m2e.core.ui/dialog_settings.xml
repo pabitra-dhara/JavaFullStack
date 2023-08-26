@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="D:\JavaFullStack\examportal"/>
 			<item value="D:\JavaFullStack\employeeService\springboot-backend"/>
 			<item value="D:\JavaFullStack\springboot-backend"/>
 			<item value="D:\springpractice\DemoApplication"/>
