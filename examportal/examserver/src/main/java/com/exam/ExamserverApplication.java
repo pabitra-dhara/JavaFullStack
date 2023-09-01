@@ -14,7 +14,8 @@ import com.exam.entity.UserRole;
 import com.exam.services.UserServices;
 
 @SpringBootApplication
-public class ExamserverApplication implements CommandLineRunner{
+public class ExamserverApplication{
+	//implements CommandLineRunner
 	//password encription
 	@Autowired
 	private UserServices userServices;
@@ -23,10 +24,10 @@ public class ExamserverApplication implements CommandLineRunner{
 		SpringApplication.run(ExamserverApplication.class, args);
 		System.out.print("Application Run And Reddy");
 	}
-
-	@Override
-	public void run(String... args) throws Exception {
-		System.out.println("starting code");
+//
+//	@Override
+//	public void run(String... args) throws Exception {
+//		System.out.println("starting code");
 //		User user=new User();
 //		user.setFirstName("Pabitra");
 //		user.setLastName("Dhara");
@@ -47,5 +48,5 @@ public class ExamserverApplication implements CommandLineRunner{
 //		User user1=this.userServices.createUser(user, userRoleSet);
 //		System.out.println(user1.getUsername());
 //		System.out.println(user1.getPassword());
-	}
+//	}
 }
