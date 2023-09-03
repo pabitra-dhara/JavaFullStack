@@ -1,1 +1,7 @@
 monolithic architecher
+
+bootstrap grids link:"./node_modules/bootstrap-grid-only-css/dist/css/bootstrap-grid.min.css"
+
+1.url thaka open kora page page namer folder er mordha rakhbo
+2.and reuse components file akta components folder er mordha rakh bo
+3.pages er components jagula url thaka open korbo
