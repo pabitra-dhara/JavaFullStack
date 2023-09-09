@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from 'src/app/services/user.service';
 @Component({
   selector: 'app-signup',
@@ -6,7 +7,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit{
-  constructor(private userService:UserService){}
+  constructor(private userService:UserService,private _snackBar:MatSnackBar){}
   public user={
     username:'',
     password:'',
@@ -20,7 +21,10 @@ ngOnInit():void{}
 formSubmit(){
   console.log(this.user);
   if(this.user.username=='' || this.user.username==null){
-    alert('User is required');
+    //alert('User is required');
+    this._snackBar.open('User is Required','OK',{
+      duration:3000,verticalPosition:'top'
+    });
     return;
   }
 
@@ -33,7 +37,10 @@ formSubmit(){
     (error)=>{
       //error
       console.log(error);
-      alert('somthing went to wrong');
+      //alert('somthing went to wrong');
+      this._snackBar.open('Somting went to wrong','OK',{
+        duration:3000,verticalPosition:'top'
+      });
     }
   )
 }
