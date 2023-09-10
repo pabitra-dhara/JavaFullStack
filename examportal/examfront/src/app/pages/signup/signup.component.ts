@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from 'src/app/services/user.service';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -30,9 +31,11 @@ formSubmit(){
 
   //addUser
   this.userService.addUser(this.user).subscribe(
-    (date)=>{
+    (data:any)=>{
       //success
-      alert('success');
+      console.log(data);
+      //alert('success');
+      Swal.fire('Successfully done!!','User id is '+data.id,'success');
     },
     (error)=>{
       //error
