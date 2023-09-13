@@ -5,6 +5,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .text-center{
     text-align: center;
 }
+/* img{
+    width: 20px;
+    height: 20px;
+} */
 .ml20{
     margin-left: 20px;
 }
@@ -16,4 +20,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 .mb20{
     margin-bottom: 20px;
+}
+.menu{
+    position: fixed;
+    top: 0;
 }
