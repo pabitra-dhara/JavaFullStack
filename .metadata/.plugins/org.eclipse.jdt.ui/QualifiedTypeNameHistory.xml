@@ -44,7 +44,6 @@
     <fullyQualifiedTypeName name="com.exam.services.UserServices"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="java.util.Set"/>
-    <fullyQualifiedTypeName name="java.util.HashSet"/>
     <fullyQualifiedTypeName name="com.exam.entity.Role"/>
     <fullyQualifiedTypeName name="com.exam.entity.UserRole"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
@@ -54,4 +53,7 @@
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.CrossOrigin"/>
+    <fullyQualifiedTypeName name="org.springframework.security.core.userdetails.UserDetails"/>
+    <fullyQualifiedTypeName name="java.util.HashSet"/>
+    <fullyQualifiedTypeName name="org.springframework.security.core.GrantedAuthority"/>
 </qualifiedTypeNameHistroy>
