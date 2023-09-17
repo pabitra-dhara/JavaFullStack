@@ -122,8 +122,10 @@ public class User implements UserDetails{
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		Set<Autharity> set=new HashSet<>();
-		
-		return null;
+		this.userRoles.forEach(userRole->{
+			set.add(new Autharity(userRole.getRole().getRoleName()));
+		});
+		return set;
 	}
 	@Override
 	public boolean isAccountNonExpired() {
