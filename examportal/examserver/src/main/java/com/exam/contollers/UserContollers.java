@@ -30,6 +30,7 @@ public class UserContollers {
 	//creating user
 	@PostMapping("/")
 	public User createUser(@RequestBody User user) throws Exception{
+		user.setProfile("defult.png");
 		Set<UserRole> roles=new HashSet<>();
 		
 		Role role=new Role();

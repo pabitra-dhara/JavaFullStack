@@ -118,14 +118,10 @@ public class User implements UserDetails{
 	public void setProfile(String profile) {
 		this.profile = profile;
 	}
-	//UserDetails JWT
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		Set<Autharity> set=new HashSet<>();
-		this.userRoles.forEach(userRole->{
-			set.add(new Autharity(userRole.getRole().getRoleName()));
-		});
-		return set;
+		Set<Authority> set=new HashSet<>();
+		return null;
 	}
 	@Override
 	public boolean isAccountNonExpired() {
@@ -145,7 +141,7 @@ public class User implements UserDetails{
 	@Override
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub
-		return true;
+		return enable;
 	}
 	
 }
