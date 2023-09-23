@@ -121,6 +121,9 @@ public class User implements UserDetails{
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		Set<Authority> set=new HashSet<>();
+		this.userRoles.forEach(UserRole ->{
+			set.add(new Authority(UserRole.getRole().getRoleName()));
+		});
 		return null;
 	}
 	@Override
