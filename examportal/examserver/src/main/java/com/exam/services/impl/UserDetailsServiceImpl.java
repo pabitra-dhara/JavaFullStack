@@ -4,10 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 import com.exam.entity.User;
 import com.exam.repository.UserRepository;
 
+@Service
 public class UserDetailsServiceImpl implements UserDetailsService{
 	
 	@Autowired
@@ -20,7 +22,7 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 			System.out.println("User Not Found");
 			throw new UsernameNotFoundException("User Not Found");
 		}
-		return null;
+		return user;
 	}
 
 }
