@@ -30,9 +30,8 @@ public class MySecurityConfig extends WebSecurityConfiguration{
 	@Autowired
 	private UserDetailsServiceImpl userDetailsServiceImpl;
 	
-	@Override
 	@Bean
-	public AuthenticationManager authenticationManagerBean() throws Exception{
+	public AuthenticationManager authenticationManagerBean() {
 		return super.authenticationManagerBean();
 	}
 	
