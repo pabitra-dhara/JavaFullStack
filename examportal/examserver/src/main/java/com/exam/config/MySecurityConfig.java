@@ -32,7 +32,7 @@ public class MySecurityConfig extends WebSecurityConfiguration{
 	
 	@Bean
 	public AuthenticationManager authenticationManagerBean() {
-		return super.authenticationManagerBean();
+		return authenticationManagerBean();
 	}
 	
 	@Bean
