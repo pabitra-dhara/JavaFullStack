@@ -15,7 +15,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import com.exam.services.impl.UserDetailsServiceImpl;
 
-import io.jsonwebtoken.JwtBuilder;
 
 @Configuration
 @EnableWebSecurity
@@ -44,6 +43,7 @@ public class MySecurityConfig extends WebSecurityConfiguration{
 		auth.userDetailsService(this.userDetailsServiceImpl).passwordEncoder(passwordEncoder());
 	}
 	 
+	@SuppressWarnings({ "deprecation", "removal" })
 	protected void configure(HttpSecurity http) throws Exception{
 		http
 		.csrf().disable()
