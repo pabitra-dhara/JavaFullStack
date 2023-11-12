@@ -19,7 +19,7 @@ import com.exam.services.impl.UserDetailsServiceImpl;
 
 @Configuration
 @EnableWebSecurity
-public class MySecurityConfig extends WebSecurityConfiguration{
+public class MySecurityConfig extends WebSecurityConfiguration{n
 	
 	@Autowired
 	private JwtAuthenticationEntrypoint unauthorizesHandler;
