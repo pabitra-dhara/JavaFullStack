@@ -2,6 +2,7 @@ package com.exam.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -10,6 +11,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+
+import com.exam.contollers.AuthenticateController;
+import com.exam.services.impl.UserDetailsServiceImpl;
 
 /*import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -76,6 +80,7 @@ public class MySecurityConfig extends WebSecurityConfiguration{n
 */
 
 @Configuration
+@EnableMethodSecurity
 public class MySecurityConfig{
 	
 	@Bean
@@ -85,19 +90,23 @@ public class MySecurityConfig{
 	
 	@Bean
 	public UserDetailsService userDetailsService(){
-		UserDetails noremalUser=User
-				.withUsername("pabitra")
-				.password(passwordEncoder().encode("password"))
-				.roles("NORMEL")
-				.build();
 		
-		UserDetails adminUser=User.withUsername("pabitra1")
-				.password(passwordEncoder().encode("password"))
-				.roles("ADMIN")
-				.build();
+		return new UserDetailsServiceImpl();
 		
 		
-		return new InMemoryUserDetailsManager(noremalUser,adminUser);
+//		UserDetails noremalUser=User
+//				.withUsername("pabitra")
+//				.password(passwordEncoder().encode("password"))
+//				.roles("NORMEL")
+//				.build();
+//		
+//		UserDetails adminUser=User.withUsername("pabitra1")
+//				.password(passwordEncoder().encode("password"))
+//				.roles("ADMIN")
+//				.build();
+//		
+//		
+//		return new InMemoryUserDetailsManager(noremalUser,adminUser);
 	}
 	
 	
