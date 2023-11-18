@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -34,6 +35,7 @@ import com.exam.services.impl.UserDetailsServiceImpl;
 
 @Configuration
 @EnableWebSecurity
+@EnableGlobalMethodSecurity(prePostEnabled=true)
 public class MySecurityConfig extends WebSecurityConfiguration{n
 	
 	@Autowired
@@ -79,7 +81,10 @@ public class MySecurityConfig extends WebSecurityConfiguration{n
 }
 */
 
+
+/*
 @Configuration
+@EnableWebSecurity
 @EnableMethodSecurity
 public class MySecurityConfig{
 	
@@ -124,6 +129,23 @@ public class MySecurityConfig{
 		
 		
 		
+		return http.build();
+		
+	}
+}
+*/
+
+@Configuration
+@EnableWebSecurity
+public class MySecurityConfig{
+	@Bean
+	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+		http
+		.csrf().disable()
+		.authorizeRequests()
+		.anyRequest().authenticated()
+		.and()
+		.httpBasic();
 		return http.build();
 		
 	}
